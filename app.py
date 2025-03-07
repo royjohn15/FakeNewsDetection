@@ -179,7 +179,7 @@ def main():
                     prob_real_fll = rf_fll_model.predict_proba(empirical_features)[0][0]  # Probability of class 0 (real)
 
                     # Final metric: average probability of being real
-                    final_metric = (prob_real_fll + prob_real_rf)/2
+                    final_metric = prob_real_fll*0.6 + prob_real_rf*0.4
 
                     # Store in session state for saving
                     st.session_state['title'] = title
